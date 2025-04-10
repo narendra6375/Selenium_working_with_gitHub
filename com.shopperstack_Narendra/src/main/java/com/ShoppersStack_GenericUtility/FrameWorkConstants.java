@@ -1,23 +1,22 @@
-package com.shopperstack_GenericUtility;
+package com.ShoppersStack_GenericUtility;
 
+import com.ShoppersStack_GenericUtility.Java_Utility;
 
 public interface FrameWorkConstants {
 
-	Java_Utility javaUtility= new Java_Utility();
-	
-	final static String Excel_File_Path="./src/test/resources/Test_data/ShopperExcel.xlsx";
-	
-	final static String Property_File_Path ="./src/test/resources/Test_data/ShopStackProp.properties";
-	
-	final static String screenshotPath = "./Take_ScreenShot/" + javaUtility.Current_Date_Time() + ".png";
-	
-	final static String Reports_Path ="./Reports/"+javaUtility.Current_Date_Time()+".html";
-	
+	Java_Utility javaUtility = new Java_Utility();
 
-	
-	final static String ChromeKey="webdriver.chrome.driver";
-	
-	final static String ChromeValue="./src/main/resources/driver/chromedriver.exe";
+	final static String propertyFilePath = "./src/test/resources/testData/shopperProperty.properties";
+
+	final static String excelFilePath = "./src/test/resources/testData/shopperExcel.xlsx";
+
+	final static String screenshotPath = "./screenshot/"+javaUtility.getLocalDateAndTime()+".png";
+
+	final static String reportsPath = "./reports/"+javaUtility.getLocalDateAndTime()+".html";
+
+	final static String chromeKey = "webdriver.chrome.driver";
+
+	final static String chromeValue = "./src/main/resources/driver/chromedriver.exe";
 
 
 }

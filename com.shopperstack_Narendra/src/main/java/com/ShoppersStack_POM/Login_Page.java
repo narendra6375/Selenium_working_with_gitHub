@@ -1,4 +1,4 @@
-package com.shopperstack_POM;
+package com.ShoppersStack_POM;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,15 +10,15 @@ public class Login_Page {
 	public Login_Page(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath = "//input[@id='Email']")
+
+	@FindBy(id = "Email")
 	private WebElement emailTextField;
-	
-	@FindBy(xpath ="//input[@id='Password']")
+
+	@FindBy(id = "Password")
 	private WebElement passwordTextField;
-	
-	@FindBy(xpath ="//span[text()='Login']")
-	private WebElement login_BtnElement;
+
+	@FindBy(xpath = "//span[text()='Login']")
+	private WebElement loginBtn;
 
 	public WebElement getEmailTextField() {
 		return emailTextField;
@@ -28,8 +28,8 @@ public class Login_Page {
 		return passwordTextField;
 	}
 
-	public WebElement getLogin_BtnElement() {
-		return login_BtnElement;
+	public WebElement getLoginBtn() {
+		return loginBtn;
 	}
 	
 	

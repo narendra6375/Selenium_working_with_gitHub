@@ -1,4 +1,4 @@
-package com.shopperstack_POM;
+package com.ShoppersStack_POM;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,16 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 
 public class My_Profile_Page {
 
-	public My_Profile_Page(WebDriver driver) {
+	public void MyProfile_Page(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath ="//div[text()='My Addresses']")
-	private WebElement addressBtnElement;
 
-	public  WebElement getAddressBtnElement() {
-		return addressBtnElement;
+	@FindBy(xpath = "//div[text()='My Addresses']")
+	private WebElement myAddressesBtn;
+
+	public WebElement getMyAddressesBtn() {
+		return myAddressesBtn;
 	}
+
 	
 	
 }

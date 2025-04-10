@@ -1,4 +1,4 @@
-package com.shopperstack_GenericUtility;
+package com.ShoppersStack_GenericUtility;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,23 +9,27 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
+import com.ShoppersStack_GenericUtility.FrameWorkConstants;
+
 public class File_Utility {
 	
-	public static String ReadPropertyFile(String key) throws IOException {
-		FileInputStream fis= new FileInputStream(FrameWorkConstants.Property_File_Path);
-		Properties pro= new Properties();
+public String readDataFromPropertyFile(String key) throws IOException {
+		
+		FileInputStream fis=new FileInputStream(FrameWorkConstants.propertyFilePath);
+		Properties pro=new Properties();
 		pro.load(fis);
-		String valueString = pro.getProperty(key);
-		return valueString;
-	}
-
-	
-	public static String Excel_Data_Read(String sheetName , int row, int cellnum) throws EncryptedDocumentException, IOException {
-		FileInputStream fis = new FileInputStream(FrameWorkConstants.Excel_File_Path);
-		Workbook wbWorkbook= WorkbookFactory.create(fis);
-		Sheet S1=wbWorkbook.getSheet(sheetName);
-		String valueString=  S1.getRow(row).getCell(cellnum).getStringCellValue();
-		return valueString;
+		String value = pro.getProperty(key);
+		return value;
 		
 	}
+	
+	public String readDataFromExcelFile(String sheetName,int rowNum,int cellNum) throws EncryptedDocumentException, IOException {
+		
+		FileInputStream fis=new FileInputStream(FrameWorkConstants.excelFilePath);
+		Workbook wb=WorkbookFactory.create(fis);
+		String value = wb.getSheet(sheetName).getRow(rowNum).getCell(cellNum).getStringCellValue();
+		return value;
+		
+	}
+
 }

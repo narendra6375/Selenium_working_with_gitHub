@@ -1,4 +1,4 @@
-package com.shopperstack_POM;
+package com.ShoppersStack_POM;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,29 +7,36 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MyAddress_Page {
 
-	public MyAddress_Page(WebDriver driver) {
+	public void MyAddresses_Page(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath ="//button[text()='Add Address']")
-	private WebElement Add_Address;
-	
-	public WebElement getAdd_Address() {
-		return Add_Address;
+
+	@FindBy(xpath = "//button[text()='Add Address']")
+	private WebElement addAddressBtn;
+
+	@FindBy(xpath = "(//span[contains(@class,'MuiButton-startIcon MuiButton')])[2]")
+	private WebElement deleteBtn;
+
+	@FindBy(xpath = "//button[text()='Yes']")
+	private WebElement yesBtn;
+
+	@FindBy(xpath = "//button[@aria-label='close']")
+	private WebElement closeBtn;
+
+	public WebElement getCloseBtn() {
+		return closeBtn;
 	}
 
-	public WebElement getDelete_btn() {
-		return Delete_btn;
+	public WebElement getAddAddressBtn() {
+		return addAddressBtn;
 	}
 
-	public WebElement getYes_Btn() {
-		return Yes_Btn;
+	public WebElement getDeleteBtn() {
+		return deleteBtn;
 	}
 
-	@FindBy(xpath ="//button[@fdprocessedid=\"clp6qj\"]")
-	private WebElement Delete_btn;
-	
-	@FindBy(xpath ="//button[text()='Yes']")
-	private WebElement Yes_Btn;
-	
+	public WebElement getYesBtn() {
+		return yesBtn;
+	}
+
 }

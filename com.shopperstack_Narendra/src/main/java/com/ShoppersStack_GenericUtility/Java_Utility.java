@@ -1,4 +1,4 @@
-package com.shopperstack_GenericUtility;
+package com.ShoppersStack_GenericUtility;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -6,21 +6,26 @@ import java.util.Random;
 
 public class Java_Utility {
 
-	public int random() {
+	public int generateRandomNumber() {
+
 		Random r = new Random();
-		int value = r.nextInt(1000);
-		return value;
+		int num = r.nextInt(1000);
+		return num;
+
 	}
 
-	public String Current_Date() {
-		String dateString = LocalDate.now().toString().replace("-", "/");
-		return dateString;
-	}
+	public String getLocalDate() {
 
-	public String Current_Date_Time() {
-		String dateString = LocalDateTime.now().toString().replace("-", "")
-				.replace(":", "").replace(".", "");
-		return dateString;
+		String date = LocalDate.now().toString().replace("-", "");
+		return date;
+
+	}
+	
+	public String getLocalDateAndTime() {
+		
+		String dateTime = LocalDateTime.now().toString().replace("-","").replace(":","").replace(".","");
+		return dateTime;
+		
 	}
 
 }

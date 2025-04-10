@@ -3,18 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.shopperstack_TestScripts.Test_Case001_Adress">
+      <class name="com.shopperstack_TestScripts.TC_001_verify_user_is_able_to_add_address_or_not_Test">
         <methods>
-          <include name="beforeClass"/>
-          <include name="add_Address"/>
-          <include name="beforeSuite"/>
           <include name="afterTest"/>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="beforeTest"/>
+          <include name="beforeSuite"/>
           <include name="afterClass"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
+          <include name="addAddress"/>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.shopperstack_TestScripts.Test_Case001_Adress -->
+      </class> <!-- com.shopperstack_TestScripts.TC_001_verify_user_is_able_to_add_address_or_not_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,4 +1,4 @@
-package com.shopperstack_POM;
+package com.ShoppersStack_POM;
 
 
 import org.openqa.selenium.WebDriver;
@@ -9,88 +9,85 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Address_Form_Page {
 	
-	public Address_Form_Page(WebDriver driver) {
+	public void AddressForm_Page(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
-	
 	@FindBy(id = "Office")
-	private WebElement radioOfficElement;
-	
+	private WebElement officeRadioButton;
+
 	@FindBy(id = "Name")
-	private WebElement NameInput;
-	
+	private WebElement nameTextField;
+
 	@FindBy(id = "House/Office Info")
-	private WebElement HouseOffice;
-	
+	private WebElement houseTextField;
+
 	@FindBy(id = "Street Info")
-	private WebElement StreetInfo;
-	
+	private WebElement streetTextField;
+
 	@FindBy(id = "Landmark")
-	private WebElement LandMark;
-	
+	private WebElement landmarkTextField;
+
 	@FindBy(id = "Country")
-	private WebElement Country;
-	
+	private WebElement countryDropDown;
+
 	@FindBy(id = "State")
-	private WebElement State;
-	
+	private WebElement stateDropDown;
+
 	@FindBy(id = "City")
-	private WebElement City;
-	
-	
+	private WebElement cityDropDown;
+
 	@FindBy(id = "Pincode")
-	private WebElement Pincode;
-	
+	private WebElement pincodeTextField;
+
 	@FindBy(id = "Phone Number")
-	private WebElement PhoneNumber;
-	
+	private WebElement phoneNumberTextField;
+
 	@FindBy(id = "addAddress")
-	private WebElement Add_Address_Btn;
+	private WebElement addAddressBtn;
 
-	public WebElement getRadioOfficElement() {
-		return radioOfficElement;
+	public WebElement getOfficeRadioButton() {
+		return officeRadioButton;
 	}
 
-	public WebElement getNameInput() {
-		return NameInput;
+	public WebElement getNameTextField() {
+		return nameTextField;
 	}
 
-	public WebElement getHouseOffice() {
-		return HouseOffice;
+	public WebElement getHouseTextField() {
+		return houseTextField;
 	}
 
-	public WebElement getStreetInfo() {
-		return StreetInfo;
+	public WebElement getStreetTextField() {
+		return streetTextField;
 	}
 
-	public WebElement getLandMark() {
-		return LandMark;
+	public WebElement getLandmarkTextField() {
+		return landmarkTextField;
 	}
 
-	public WebElement getCountry() {
-		return Country;
+	public WebElement getCountryDropDown() {
+		return countryDropDown;
 	}
 
-	public WebElement getState() {
-		return State;
+	public WebElement getStateDropDown() {
+		return stateDropDown;
 	}
 
-	public WebElement getCity() {
-		return City;
+	public WebElement getCityDropDown() {
+		return cityDropDown;
 	}
 
-	public WebElement getPincode() {
-		return Pincode;
+	public WebElement getPincodeTextField() {
+		return pincodeTextField;
 	}
 
-	public WebElement getPhoneNumber() {
-		return PhoneNumber;
+	public WebElement getPhoneNumberTextField() {
+		return phoneNumberTextField;
 	}
 
-	public WebElement getAdd_Address_Btn() {
-		return Add_Address_Btn;
+	public WebElement getAddAddressBtn() {
+		return addAddressBtn;
 	}
-	
-	
+
 }

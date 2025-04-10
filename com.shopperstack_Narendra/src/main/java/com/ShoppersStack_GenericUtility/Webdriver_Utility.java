@@ -1,4 +1,4 @@
-package com.shopperstack_GenericUtility;
+package com.ShoppersStack_GenericUtility;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,30 +11,39 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 
+import com.ShoppersStack_GenericUtility.FrameWorkConstants;
+
 public class Webdriver_Utility {
 
-	public void WebPage_SS(WebDriver driver) throws IOException {
-		TakesScreenshot tScreenshot = (TakesScreenshot) driver;
-		File sourceFile = tScreenshot.getScreenshotAs(OutputType.FILE);
-		File desFile = new File(FrameWorkConstants.screenshotPath);
-		FileHandler.copy(sourceFile, desFile);
+	public void getWebPageScreenShot(WebDriver driver) throws IOException {
+
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File temp = ts.getScreenshotAs(OutputType.FILE);
+		File dest = new File(FrameWorkConstants.screenshotPath);
+		FileHandler.copy(temp, dest);
 
 	}
 
-	public void element_SS(WebElement element) throws IOException {
-		File tempFile = element.getScreenshotAs(OutputType.FILE);
-		File deFile = new File("");
-		FileHandler.copy(tempFile, deFile);
+	public void getWebElementScreenShot(WebElement element) throws IOException {
+
+		File temp = element.getScreenshotAs(OutputType.FILE);
+		File dest = new File(FrameWorkConstants.screenshotPath);
+		FileHandler.copy(temp, dest);
+
 	}
 
-	public void SelectByValues(WebElement selectElement, String Value) {
-		Select mySelect = new Select(selectElement);
-		mySelect.selectByValue(Value);
+	public void selectByValue(WebElement element, String value) {
+
+		Select sel = new Select(element);
+		sel.selectByValue(value);
+
 	}
 
-	public void javaScriptClick(WebDriver driver, WebElement cliElement) {
-		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		jsExecutor.executeScript("argument[0].click();", cliElement);
+	public void javaScriptClick(WebDriver driver, WebElement element) {
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
+
 	}
 
 }

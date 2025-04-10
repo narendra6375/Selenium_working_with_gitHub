@@ -1,31 +1,36 @@
 package com.shopperstack_TestScripts;
 
+import java.io.IOException;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
-import com.shopperstack_POM.My_profile_page;
-import com.shopperstack_POM.homePage;
+import com.ShoppersStack_GenericUtility.Base_Test;
+import com.ShoppersStack_POM.MyAddresses_Page;
+import com.ShoppersStack_POM.MyProfile_Page;
+//import com.ShoppersStack_POM.My_profile_page;
+//import com.ShoppersStack_POM.homePage;
 
-public class TC_002_verify_user_is_able_to_delete_address_or_not {
+public class TC_002_verify_user_is_able_to_delete_address_or_not_Test extends Base_Test {
 
 	@Test
-	public void deleteAddress() {
-		
+	public void deleteAddress() throws InterruptedException, IOException {
+
 		homePage.getAccountSettingsBtn().click();
 		homePage.getMyProfileBtn().click();
-		
-		My_profile_page myProfilePage = new My_profile_page(driver);
-		myProfilePage.getMyAddressBtn().click();
-		
-		MyAddresses_Page myAddressesPage = new MyAddresses_page(driver);
-		wait.until(ExpectedConditions.elementToBeClickable(myAddressPage.getDeleteBtn()));
-		wait.until(ExpectedConditions.elementToBeClickable(myAddressPage.getYesBtn()));
-		
+
+		MyProfile_Page myProfilePage = new MyProfile_Page(driver);
+		myProfilePage.getMyAddressesBtn().click();
+
+		MyAddresses_Page myAddressesPage = new MyAddresses_Page(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(myAddressesPage.getDeleteBtn())).click();
+		wait.until(ExpectedConditions.elementToBeClickable(myAddressesPage.getYesBtn())).click();
+
 		wait.until(ExpectedConditions.alertIsPresent());
 		driver.switchTo().alert().accept();
-		
-		webDriverUtility.getWebPageScreenshot(driver);
-		
-		
+
+		webDriverUtility.getWebPageScreenShot(driver);
+
 	}
+
 }
