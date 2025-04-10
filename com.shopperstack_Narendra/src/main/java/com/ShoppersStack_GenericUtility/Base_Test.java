@@ -65,6 +65,7 @@ public class Base_Test {
 //		String browser = fileUtility.readDataFromPropertyFile("browserName");
 //		String url = fileUtility.readDataFromPropertyFile("url");
 
+		System.out.println(" ");
 		String browser = System.getProperty("browserName");
 		String url = System.getProperty("url");
 
